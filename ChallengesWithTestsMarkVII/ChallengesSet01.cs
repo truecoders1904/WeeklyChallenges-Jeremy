@@ -33,13 +33,19 @@ namespace ChallengesWithTestsMarkVII
         }
 
         public string GetGreeting(string nameOfPerson)
-        {
-            throw new NotImplementedException();
-        }
+        
 
+        {
+            if (nameOfPerson == "")
+            {
+                return "Hello!";
+            }
+            return $"Hello, {nameOfPerson}!";
+        }
+   
         public string GetHey()
         {
-            throw new NotImplementedException();
+            return ("HEY!");
         }
     }
 }
