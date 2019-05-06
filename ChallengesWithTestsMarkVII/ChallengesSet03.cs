@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMarkVII
 {
@@ -19,8 +20,21 @@ namespace ChallengesWithTestsMarkVII
         }
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
-        {
-            throw new NotImplementedException();
+        {   if(numbers == null || !numbers.Any())
+            {
+                return false;
+            }
+            int startingPoint = 0;
+            foreach (int num in numbers)
+            {
+                if( num %2 != 0)
+                {
+                    startingPoint++;
+                }
+                
+                
+            }
+            return startingPoint % 2 != 0;
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
