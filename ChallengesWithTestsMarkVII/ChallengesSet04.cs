@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMarkVII
 {
@@ -6,8 +8,21 @@ namespace ChallengesWithTestsMarkVII
     {
         public int AddEvenSubtractOdd(int[] numbers)
         {
-            throw new NotImplementedException();
-        }
+            int total = 0;
+            foreach (int num in numbers)
+            {
+                if (num % 2 == 0)
+                {
+                    total += num;
+                }
+                else 
+                {
+                    total -= num;
+                }
+            }
+            return total;
+        } 
+                
 
         public int GetLengthOfShortestString(string str1, string str2, string str3, string str4)
         {
@@ -15,9 +30,12 @@ namespace ChallengesWithTestsMarkVII
         }
 
         public int GetSmallestNumber(int number1, int number2, int number3, int number4)
+
         {
-            throw new NotImplementedException();
+            List<int> numbers = new List<int>() { number1, number2, number3, number4 };
+            return numbers.Min();
         }
+       
 
         public void ChangeBusinessNameTo_TrueCoders(Business biz)
         {
