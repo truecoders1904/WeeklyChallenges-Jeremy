@@ -59,7 +59,19 @@ namespace ChallengesWithTestsMarkVII
 
         public bool IsStringANumber(string input)
         {
-            throw new NotImplementedException();
+            if (String.IsNullOrEmpty(input))
+            {
+                return false;
+            }
+            foreach (char c in input)
+            {
+                if (!char.IsDigit(c) && c != '.' && c!= '-')
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
