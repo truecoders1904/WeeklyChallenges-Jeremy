@@ -76,17 +76,58 @@ namespace ChallengesWithTestsMarkVII
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            int i, count = 0;
+            for (i = 0; i < objs.Length; i++)
+            {
+                if (objs[i] == null)
+                    count++;
+            }
+            if (count > objs.Length / 2)
+                return true;
+            return false;
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            double count = 0;
+
+            if (numbers == null)
+            {
+                return 0;
+            }
+            int sum = 0;
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (numbers[i] % 2 == 0)
+                {
+                    sum += numbers[i];
+                    count++;
+                }
+            }
+            if (count == 0)
+
+                return 0;
+            return sum / count;
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else
+            {
+                int factorial = 1;
+                for (int i = 1; i <= number; i++)
+                {
+
+                    factorial = factorial * i;
+                }
+                return factorial;
+
+            }   
+
         }
     }
 }
