@@ -110,12 +110,35 @@ namespace ChallengesWithTestsMarkVII
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            List<double> listOfFourths = new List<double>();
+            if(elements == null)
+            {
+                return elements.ToArray();
+            }
+            for (int i = 3; i < elements.Count; i += 4)
+            {
+
+                listOfFourths.Add(elements[i]);
+
+            }
+            double[] arrayOfFourths = listOfFourths.ToArray();
+            return arrayOfFourths;
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+                    if (nums[i] + nums[j] == targetNumber)
+                    {
+                        return (nums[i] + nums[j] == targetNumber);
+                    }
+
+                }
+            }
+            return false;
         }
     }
 }
