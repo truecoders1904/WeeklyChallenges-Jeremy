@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ChallengesWithTestsMarkVII
 {
@@ -68,8 +69,43 @@ namespace ChallengesWithTestsMarkVII
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            if (words == null || words.Length == 0)
+            {
+                return "";
+            }
+
+            string newSentence = "";
+            int i = 0;
+
+            for (i = 0; i < words.Length - 1; i++)
+            {
+                if (words[i] == " ")
+                {
+                    newSentence += "";
+                }
+
+                else
+                {
+                    newSentence += words[i] + " ";
+                }
+
+            }
+
+            newSentence += words[words.Length - 1];
+            newSentence = newSentence.Trim();
+
+            if (newSentence.Length == 0)
+            {
+                return "";
+            }
+            else
+            {
+                newSentence += ".";
+            }
+
+            return Regex.Replace(newSentence, @"\s+", " ");
         }
+    
     
 
         public double[] GetEveryFourthElement(List<double> elements)
